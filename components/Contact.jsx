@@ -41,19 +41,19 @@ const Contact = () => {
         initial={{y: -20, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
         transition={{delay: 0.3, duration: 0.5}}
-        className='text-center mb-2 text-lg font-Ovo'>Connect with me</motion.h4>
+        className='text-center mb-2 text-lg font-Poppins'>Connect with me</motion.h4>
 
         <motion.h2 
         initial={{y: -20, opacity: 0}}
         whileInView={{y: 0, opacity: 1}}
         transition={{delay: 0.5, duration: 0.5}}
-        className='text-center text-5xl font-Ovo'>Get in touch</motion.h2>
+        className='text-center text-5xl font-Poppins'>Get in touch</motion.h2>
 
         <motion.p 
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
         transition={{delay: 0.7, duration: 0.5}}
-        className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>
+        className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Poppins'>
          I'd love to hear from you! If you have any questions, comments, or feedback, please use the form below.
         </motion.p>
 
@@ -86,7 +86,7 @@ const Contact = () => {
           <motion.button 
           whileHover={{scale: 1.05}}
           transition={{duration: 0.3}}
-          type='submit' className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover'>
+          type='submit' className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-400 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover'>
             Submit now <Image src={assets.right_arrow_white} alt='' className='w-4'/>
           </motion.button>
 

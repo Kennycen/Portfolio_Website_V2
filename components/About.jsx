@@ -14,12 +14,12 @@ const About = ({isDarkMode}) => {
         initial={{opacity: 0, y: -20}}
         whileInView={{opacity: 1, y: 0}}
         transition={{duration: 0.5, delay: 0.3}}
-        className='text-center mb-2 text-lg font-Ovo'>Introduction</motion.h4>
+        className='text-center mb-2 text-lg font-Poppins'>Introduction</motion.h4>
         <motion.h2 
         initial={{opacity: 0, y: -20}}
         whileInView={{opacity: 1, y: 0}}
         transition={{duration: 0.5, delay: 0.5}}
-        className='text-center text-5xl font-Ovo'>About Me</motion.h2>
+        className='text-center text-5xl font-Poppins'>About Me</motion.h2>
 
         <motion.div 
         initial={{opacity: 0}}
@@ -31,14 +31,14 @@ const About = ({isDarkMode}) => {
           whileInView={{opacity: 1, scale: 1}}
           transition={{duration: 0.6}}
           className='w-64 sm:w-80 rounded-3xl max-w-none'>
-            <Image src={assets.user_image} alt='user' className='w-full rounded-3xl' />
+            <Image src={assets.profile_picture} alt='user' className='w-full rounded-3xl' />
           </motion.div>
           <motion.div 
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
           transition={{duration: 0.6, delay: 0.8}}
           className='flex-1'>
-            <p className='mb-10 max-w-2xl font-Ovo'>I am an experienced Frontend Developer with over a decade of professional expertise in the field. Throughout my career, I have had the privilege of collaborating with prestigious organizations, contributing to their success and growth.</p> 
+            <p className='mb-10 max-w-2xl font-Poppins'>I am a senior at Baruch College, majoring in Computer Information System. I'm dedicated to honing my skills to build a successful career in tech. Working towards landing my dream job in (FAANG).</p> 
 
             <motion.ul 
             initial={{opacity: 0}}
@@ -60,7 +60,7 @@ const About = ({isDarkMode}) => {
             initial={{y: 20, opacity: 0}}
             whileInView={{y: 0, opacity: 1}}
             transition={{duration: 0.6, delay: 1.5}}
-            className='my-6 text-gray-700 font-Ovo dark:text-white/80'>Tools I use</motion.h4>
+            className='my-6 text-gray-700 font-Poppins dark:text-white'>Tools I use:</motion.h4>
 
             <motion.ul 
             initial={{opacity: 0}}

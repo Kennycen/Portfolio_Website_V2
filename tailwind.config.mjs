@@ -10,11 +10,11 @@ export default {
       colors: {
         lightHover: '#fcf4ff',
         darkHover: '#2a004a',
-        darkTheme: '#11001F'
+        darkTheme: '#2c083b'
       },
       fontFamily: {
         Outfit: ["Outfit", "sans-serif"],
-        Ovo: ["Ovo", "serif"]
+        Poppins: ["Poppins", "serif"]
       },
       boxShadow: {
         'black': '4px 4px 0 #000',
