@@ -30,8 +30,7 @@ import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 import profile_picture from "./Profile-Picture.png";
-import exp1 from "./exp1.png";
-import logo1 from "./logo1.png";
+
 import download_icon from "./download-icon.png";
 import html5 from "./html5-color.svg";
 import css3 from "./css3-color.svg";
@@ -96,8 +95,6 @@ export const assets = {
   right_arrow_bold,
   right_arrow_bold_dark,
   profile_picture,
-  exp1,
-  logo1,
   html5,
   css3,
   cplusplus,
