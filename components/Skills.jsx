@@ -1,53 +1,137 @@
-import { assets, skillData } from '@/assets/assets'
-import Image from 'next/image'
-import React from 'react'
-import { motion } from "motion/react"
+import { categorizedSkills } from "@/assets/assets";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 
 const Services = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
+  // Flatten all skills for "All" view
+  const allSkills = categorizedSkills.flatMap((cat) =>
+    cat.skills.map((skill) => ({ ...skill, category: cat.category }))
+  );
+
+  // Get skills to display
+  const skillsToShow =
+    activeCategory === "All"
+      ? allSkills
+      : categorizedSkills.find((cat) => cat.category === activeCategory)
+          ?.skills || [];
+
   return (
-    <motion.div 
-    initial={{opacity: 0}}
-    whileInView={{opacity: 1}}
-    transition={{duration: 1}}
-    id='services' className='w-full px-[12%] py-10 scroll-mt-20'>
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      id="services"
+      className="w-full px-5 md:px-10 lg:px-20 py-20 scroll-mt-20"
+    >
+      <motion.h4
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="text-center mb-2 text-lg font-Poppins"
+      >
+        What I know
+      </motion.h4>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-center text-5xl font-Poppins"
+      >
+        My skills
+      </motion.h2>
 
-        <motion.h4 
-        initial={{y: -20, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{delay: 0.3, duration: 0.5}}
-        className='text-center mb-2 text-lg font-Poppins'>What I know</motion.h4>
+      {/* Category Tabs */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+        className="flex flex-wrap gap-3 mb-12 overflow-x-auto pb-2 scrollbar-hide mt-14 p-2"
+      >
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          onClick={() => setActiveCategory("All")}
+          className={`skill-tab ${activeCategory === "All" ? "active" : ""}`}
+        >
+          All Skills
+        </motion.button>
+        {categorizedSkills.map((category) => (
+          <motion.button
+            key={category.category}
+            whileHover={{ scale: 1.05 }}
+            onClick={() => setActiveCategory(category.category)}
+            className={`skill-tab ${
+              activeCategory === category.category ? "active" : ""
+            }`}
+          >
+            {category.category}
+          </motion.button>
+        ))}
+      </motion.div>
 
-        <motion.h2 
-        initial={{y: -20, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{delay: 0.5, duration: 0.5}}
-        className='text-center text-5xl font-Poppins'>My Skills</motion.h2>
+      {/* Skills Display */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeCategory}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="skill-cloud min-h-[400px]"
+        >
+          {skillsToShow.map((skill, index) => {
+            const category =
+              activeCategory === "All" ? skill.category : activeCategory;
+            return (
+              <motion.div
+                key={`${category}-${skill.name}-${index}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: index * 0.03,
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                whileHover={{ scale: 1.05 }}
+                onHoverStart={() => setHoveredSkill(skill.name)}
+                onHoverEnd={() => setHoveredSkill(null)}
+                className="skill-badge group relative"
+              >
+                {typeof skill.icon === "string" ? (
+                  <span className="skill-badge-icon">{skill.icon}</span>
+                ) : (
+                  <Image
+                    src={skill.icon}
+                    alt={skill.name}
+                    width={40}
+                    height={40}
+                    className="skill-badge-icon"
+                  />
+                )}
+                <span className="skill-badge-text">{skill.name}</span>
 
-        <motion.p 
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1}}
-        transition={{delay: 0.9, duration: 0.6}}
-        className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Poppins'>I am a Full Stack Developer, building solutions and improve efficiency.</motion.p>
-
-        <motion.div 
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1}}
-        transition={{delay: 0.5, duration: 0.5}}
-        className='grid grid-cols-auto gap-6 my-10'>
-            {skillData.map(({icon, title, description, link}, index)=>(
-                <motion.div 
-                whileHover={{scale: 1.05}}
-                key={index} className='border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white'>
-                    <Image src={icon} alt='' className='w-10' />
-                    <h3 className='text-lg my-4 text-gray-700 dark:text-white'>{title}</h3>
-                    <p className='text-sm text-gray-600 leading-5 dark:text-white/80'>
-                        {description}
-                    </p>
-                </motion.div>
-            ))}
+                {/* Category label on hover (only in "All" view) */}
+                {activeCategory === "All" && hoveredSkill === skill.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 rounded-md bg-purple-600 text-white text-xs whitespace-nowrap pointer-events-none z-10"
+                  >
+                    {category}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-purple-600"></div>
+                  </motion.div>
+                )}
+              </motion.div>
+            );
+          })}
         </motion.div>
-    </motion.div>
-  )
-}
+      </AnimatePresence>
+    </motion.section>
+  );
+};
 
-export default Services
+export default Services;

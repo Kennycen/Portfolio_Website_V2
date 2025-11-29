@@ -6,3 +6,203 @@
   font-family: Outfit;
 }
 
+/* Add CSS variables for gradient */
+:root {
+  --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
+}
+
+/* Utility classes */
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-5 md:px-10 md:mt-40 mt-20;
+  }
+
+  .hero-badge {
+    @apply bg-gray-800 dark:bg-gray-700 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
+  }
+
+  .card-border {
+    @apply border border-slate-300 dark:border-purple-600 bg-slate-50 dark:bg-purple-900/40;
+  }
+
+  .timeline-wrapper {
+    @apply absolute top-0 xl:left-[35.5vw] md:left-10 left-5 h-full flex justify-center;
+  }
+
+  .timeline {
+    @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-white dark:bg-darkTheme;
+  }
+
+  .timeline-logo {
+    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-slate-300 dark:border-purple-600 bg-slate-50 dark:bg-purple-900;
+  }
+
+  .exp-card-wrapper {
+    @apply flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between;
+  }
+
+  .project-card {
+    @apply border border-slate-300 dark:border-purple-600 bg-slate-50 dark:bg-purple-900/40 rounded-xl p-6 transition-all duration-300 hover:border-slate-400 dark:hover:border-purple-500 hover:bg-slate-100 dark:hover:bg-purple-900/60;
+  }
+
+  .project-icon {
+    @apply text-4xl mb-4;
+  }
+
+  .project-button {
+    @apply px-4 py-2 rounded-lg bg-black hover:bg-gray-800 dark:bg-purple-600 dark:hover:bg-purple-700 text-white text-sm font-semibold flex items-center gap-2 transition-colors duration-200;
+  }
+
+  .skill-tab {
+    @apply px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer border border-transparent;
+    @apply bg-slate-200 dark:bg-purple-700 text-slate-700 dark:text-purple-300;
+    @apply hover:bg-slate-300 dark:hover:bg-purple-600 hover:text-slate-900 dark:hover:text-white;
+  }
+
+  .skill-tab.active {
+    @apply bg-slate-600 dark:bg-purple-500 text-white dark:text-white border-slate-600 dark:border-purple-500;
+  }
+
+  .skill-badge {
+    @apply flex flex-col items-center justify-center gap-2 px-4 py-3 rounded-xl;
+    @apply border-[0.5px] border-slate-300 dark:border-purple-300;
+    @apply bg-transparent text-slate-700 dark:text-purple-200;
+    @apply text-base font-medium cursor-pointer;
+    @apply transition-all duration-500;
+    @apply hover:bg-slate-100 hover:-translate-y-1 hover:shadow-slate-400/50 hover:border-slate-400;
+    @apply dark:hover:bg-purple-900/50 dark:hover:shadow-purple-400/50 dark:hover:border-purple-400;
+  }
+
+  .skill-badge-icon {
+    @apply text-3xl;
+  }
+
+  .skill-badge-text {
+    @apply text-base font-medium text-center;
+  }
+
+  .skill-cloud {
+    @apply flex flex-wrap gap-3 justify-center;
+  }
+}
+
+/* Gradient line for timeline */
+.gradient-line {
+  width: 2px;
+  background: linear-gradient(
+    0deg,
+    rgba(69, 222, 196, 0) 0%,
+    #62e0ff 25%,
+    #52aeff 37.51%,
+    #fd5c79 62.83%,
+    #6d45ce 92.91%
+  );
+}
+
+/* Card glow effect */
+.card {
+  --start: 0;
+  position: relative;
+  z-index: 40;
+  overflow: hidden;
+  transition: border-color 1s ease-in-out;
+}
+
+.card::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: var(--gradient);
+  background-attachment: fixed;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - 15) * 1deg),
+      #ffffff1f 0deg,
+      white,
+      #ffffff00 100deg
+    );
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.glow {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+  filter: saturate(200);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Word slider styles (existing) */
+.slide {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 1.2em;
+  vertical-align: bottom;
+  line-height: 1.2em;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: wordSlider 21s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
+}
+
+@keyframes wordSlider {
+  0% {
+    transform: translateY(0.5%);
+  }
+  12.5% {
+    transform: translateY(-12.5%);
+  }
+  25% {
+    transform: translateY(-25%);
+  }
+  37.5% {
+    transform: translateY(-37.5%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  62.5% {
+    transform: translateY(-62.5%);
+  }
+  75% {
+    transform: translateY(-75%);
+  }
+  87.5% {
+    transform: translateY(-87.5%);
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
