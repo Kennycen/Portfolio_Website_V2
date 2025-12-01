@@ -30,7 +30,7 @@ import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 import profile_picture from "./Profile-Picture.png";
-
+import python_logo from "./Python-logo.png";
 import download_icon from "./download-icon.png";
 import html5 from "./html5-color.svg";
 import css3 from "./css3-color.svg";
@@ -123,6 +123,7 @@ export const assets = {
   theDifference,
   theramotiveLogo,
   sportsMediaLogo,
+  python_logo,
 };
 
 export const workData = [
@@ -212,7 +213,7 @@ export const categorizedSkills = [
     skills: [
       { name: "JavaScript", icon: assets.javascript },
       { name: "TypeScript", icon: assets.typescript },
-      { name: "Python", icon: "🐍" },
+      { name: "Python", icon: assets.python_logo },
       { name: "C++", icon: assets.cplusplus },
       { name: "HTML5", icon: assets.html5 },
       { name: "CSS3", icon: assets.css3 },
@@ -327,7 +328,7 @@ export const words = [
 export const expCards = [
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+      "Kenny made an immediate impact on our operational efficiency. His implementation of the AI-powered query feature cut manual work and his optimizations to our core platform significantly boosted load speeds.",
     logoPath: assets.theDifference,
     title: "Software Engineer Intern",
     date: "August 2025 - October 2025",
@@ -339,7 +340,7 @@ export const expCards = [
   },
   {
     review:
-      "Adrian's contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+      "Kenny was a key contributor to our technical infrastructure, helping build our analytics platform from the ground up using Next.js, TypeScript, and Shadcn. He builds clean, scalable interfaces that effectively centralize complex business data.",
     logoPath: assets.theramotiveLogo,
     title: "Frontend Engineer Intern",
     date: "June 2025 - July 2025",
@@ -351,7 +352,7 @@ export const expCards = [
   },
   {
     review:
-      "Adrian's work on Appwrite's mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+      "Kenny delivered exceptional results by optimizing our web presence from top to bottom. His technical enhancements significantly boosted our site speed and mobile performance, while his targeted SEO strategies helped us capture valuable organic traffic.",
     logoPath: assets.sportsMediaLogo,
     title: "Website and SEO Developer",
     date: "April 2025 - May 2025",

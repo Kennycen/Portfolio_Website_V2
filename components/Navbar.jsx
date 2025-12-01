@@ -87,14 +87,6 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               Experience
             </a>
           </li>
-          <li>
-            <a
-              className="font-Poppins transition-colors duration-300 hover:text-purple-600 dark:hover:text-purple-400"
-              href="#contact"
-            >
-              Contact
-            </a>
-          </li>
         </ul>
 
         <div className="flex items-center gap-4">
@@ -108,7 +100,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
           <a
             href="#contact"
-            className="group hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Poppins dark:border-2 dark:border-white/50 transition-all duration-300 hover:bg-slate-400 hover:border-slate-600 hover:text-white dark:hover:bg-purple-500 dark:hover:border-purple-500 dark:hover:text-white"
+            className="group hidden lg:flex items-center gap-3 px-10 py-2.5 bg-black text-white rounded-full ml-4 font-Poppins dark:border-2 dark:border-white/50 transition-all duration-300 hover:bg-slate-400 hover:border-slate-600 hover:text-white dark:hover:bg-purple-500 dark:hover:border-purple-500 dark:hover:text-white"
           >
             Contact{" "}
             <Image
