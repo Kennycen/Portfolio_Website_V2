@@ -56,9 +56,8 @@ const Header = () => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
-          
           href="#contact"
-          className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent"
+          className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent transition-all duration-300 hover:bg-gray-800 hover:scale-105 dark:hover:bg-purple-600 dark:hover:border-purple-600"
         >
           Contact Me
           <Image src={assets.right_arrow_white} alt="" className="w-4" />
@@ -68,9 +67,9 @@ const Header = () => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          href="https://docs.google.com/document/d/1nlWbCaJesU7s5OjJlcpzl5fjQfIcELXcf2rVYHZBWcc/edit?usp=sharing"
+          href="/Kenny Cen Resume.pdf"
           target="_blank"
-          download
+          rel="noopener noreferrer"
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black"
         >
           My Resume

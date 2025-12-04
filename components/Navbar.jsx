@@ -100,7 +100,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
           <a
             href="#contact"
-            className="group hidden lg:flex items-center gap-3 px-10 py-2.5 bg-black text-white rounded-full ml-4 font-Poppins dark:border-2 dark:border-white/50 transition-all duration-300 hover:bg-slate-400 hover:border-slate-600 hover:text-white dark:hover:bg-purple-500 dark:hover:border-purple-500 dark:hover:text-white"
+            className="group hidden lg:flex items-center gap-3 px-10 py-2.5 bg-black dark:bg-transparent text-white rounded-full ml-4 font-Poppins dark:border-2 dark:border-white/50 transition-all duration-300 hover:bg-slate-400 hover:border-slate-600 hover:text-black dark:hover:bg-purple-500 dark:hover:border-purple-500 dark:hover:text-white"
           >
             Contact{" "}
             <Image

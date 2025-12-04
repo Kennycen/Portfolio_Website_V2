@@ -41,7 +41,7 @@ const About = ({isDarkMode}) => {
           whileInView={{opacity: 1}}
           transition={{duration: 0.6, delay: 0.8}}
           className='flex-1'>
-            <p className='mb-10 max-w-2xl font-Poppins'>I am a Baruch College recent graduate, majored in Computer Information System. I'm dedicated to honing my skills to build a successful career in tech. Working towards landing my dream job in (FAANG).</p> 
+            <p className='mb-10 max-w-2xl font-Poppins'>From building an AI assistant that automates daily tasks to shipping production features at startups, I'm a Full Stack Developer who thrives on creating technology that makes a real difference. Armed with a BBA in CIS from Baruch College and hands-on experience across the entire stack, I bring ideas to life through clean, scalable code.</p> 
 
             <motion.ul 
             initial={{opacity: 0}}

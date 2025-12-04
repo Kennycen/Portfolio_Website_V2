@@ -4,6 +4,7 @@ import edu_icon from "./edu-icon.png";
 import edu_icon_dark from "./edu-icon-dark.png";
 import project_icon from "./project-icon.png";
 import project_icon_dark from "./project-icon-dark.png";
+import davinci_resolve from "./davinciresolve-color.svg";
 import vscode from "./vscode.png";
 import react from "./react.png";
 import figma from "./figma.png";
@@ -25,8 +26,6 @@ import menu_black from "./menu-black.png";
 import menu_white from "./menu-white.png";
 import close_black from "./close-black.png";
 import close_white from "./close-white.png";
-import right_arrow from "./right-arrow.png";
-import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 import profile_picture from "./Profile-Picture.png";
@@ -41,8 +40,10 @@ import mui from "./mui-color.svg";
 import bootstrap from "./bootstrap-color.svg";
 import nodedotjs from "./nodedotjs-color.svg";
 import postgresql from "./postgre-color.svg";
+import postman from "./postman-logo.png";
 import sql from "./sql.svg";
 import aws from "./aws-color.svg";
+import jira from "./jira-logo.png";
 import docker from "./docker-color.svg";
 import vercel from "./vercel-color.svg";
 import s3 from "./s3-color.svg";
@@ -51,10 +52,12 @@ import numpy from "./numpy-color.svg";
 import matplotlib from "./matplotlib-color.svg";
 import openai from "./openai-color.svg";
 import jupyter from "./jupyter-color.svg";
+import seaborn from "./seaborn-color.svg";
 import adobephotoshop from "./adobephotoshop-color.svg";
 import canva from "./canva-color.svg";
 import github from "./github-color.svg";
 import windows from "./windows-logo.svg";
+import pycharm from "./pycharm-color.svg";
 import macos from "./macos-color.svg";
 import linux from "./linux-color.svg";
 import theDifference from "./TheDifference.jpeg";
@@ -90,14 +93,13 @@ export const assets = {
   menu_white,
   close_black,
   close_white,
-  right_arrow,
-  send_icon,
   right_arrow_bold,
   right_arrow_bold_dark,
   profile_picture,
   html5,
   css3,
   cplusplus,
+  jira,
   nextjs,
   tailwindcss,
   mui,
@@ -124,56 +126,52 @@ export const assets = {
   theramotiveLogo,
   sportsMediaLogo,
   python_logo,
+  davinci_resolve,
+  pycharm,
+  seaborn,
+  postman,
 };
 
 export const workData = [
   {
     title: "Jarvis AI assistant",
     description:
-      "AI-powered assistant that handle every day tasks for you, such as setting appointments and sending emails.",
-    liveDemo: "https://your-portfolio-url.com",
-    githubRepo: "https://github.com/Kennycen/portfolio",
+      "An intelligent AI-powered personal assistant that automates everyday tasks from scheduling appointments and managing your calendar to composing and sending emails streamlining productivity through natural language interaction.",
+    //liveDemo: "https://your-portfolio-url.com",
+    githubRepo: "https://github.com/Kennycen/JarvisAI-Assistant",
     bgImage: "/work-1.png",
   },
   {
     title: "Baruch United Chinese Language Association (UCLA) Website",
     description:
-      "Official website for the Baruch United Chinese Language Association club built with Next.js, Tailwind CSS, and Framer Motion to capture the club's modern, animated branding.",
-    liveDemo: "https://your-bfs-url.com",
-    githubRepo: "https://github.com/Kennycen/bfs-website",
+      "A modern, fully responsive website designed for Baruch College's United Chinese Language Association. Features smooth page transitions and engaging animations powered by Framer Motion, built with Next.js and Tailwind CSS.",
+    liveDemo: "https://baruchucla.com",
+    githubRepo: "https://github.com/Kennycen/Baruch-UCLA-Website",
     bgImage: "/work-2.png",
   },
   {
-    title: "NEBDHub Transportation Data Science Project",
+    title: "Package Management System",
     description:
-      "Cleaned and processed 2.3M+ NYC traffic records with Python and Pandas to develop road safety recommendations. Conducted exploratory analysis, enforced data ethics, and made 17 data visualizations with Matplotlib and PowerBI.",
-    liveDemo: null,
-    githubRepo: "https://github.com/Kennycen/data-science-project",
+      "A full-stack web application that streamlines front desk operations for residential buildings enabling staff to efficiently log, track, and manage package deliveries and tenant pickups with real-time status updates.",
+    liveDemo: "https://package-mgt.vercel.app",
+    githubRepo: "https://github.com/Kennycen/Package-Management-System",
     bgImage: "/work-3.png",
   },
   {
-    title: "tAllor - AI Resume Tailor",
+    title: "Book Share Hub",
     description:
-      "Full-stack AI-powered resume tailoring platform leveraging Python, Flask, and OpenAI's API for GPT LLM, allowing for resume customization based on job descriptions. Feature-rich, user-friendly, and responsive frontend built with Next.js, TypeScript, Tailwind CSS, and Motion.",
-    liveDemo: "https://your-tallor-url.com",
-    githubRepo: "https://github.com/Kennycen/tallor",
+      "A community-driven platform connecting college students to donate, discover, and request textbooks from peers. Designed to promote sustainability, reduce educational costs, and foster campus-wide resource sharing.",
+    liveDemo: "https://booksharehub.vercel.app",
+    githubRepo: "https://github.com/Kennycen/Book-Donation-Web-App",
     bgImage: "/work-4.png",
   },
   {
-    title: "Kronicle",
+    title: "Music App",
     description:
-      "Responsive, user-friendly, Calendly-inspired scheduling platform built using Next.js. Integrated Nylas API for calendar synchronization and auth flow, and MongoDB for data storage. Created modern user interface with Tailwind CSS and Framer Motion.",
-    liveDemo: "https://your-kronicle-url.com",
-    githubRepo: "https://github.com/Kennycen/kronicle",
+      "A sleek, Spotify-inspired music streaming application built with React and Tailwind CSS. Features include personalized music uploads, intuitive playback controls, and a responsive interface for seamless listening across devices.",
+    liveDemo: "https://music-app-seven-green.vercel.app",
+    githubRepo: "https://github.com/Kennycen/Music-App",
     bgImage: "/work-1.png",
-  },
-  {
-    title: "Supercar AI Chatbot",
-    description:
-      "Next.js RAG web app for learning about maintaining various exotic cars straight from the user manual. Uses Langchain, Pinecone, OpenAI, and Clerk.",
-    liveDemo: "https://your-chatbot-url.com",
-    githubRepo: "https://github.com/Kennycen/supercar-chatbot",
-    bgImage: "/work-2.png",
   },
 ];
 
@@ -255,6 +253,7 @@ export const categorizedSkills = [
       { name: "Matplotlib", icon: assets.matplotlib },
       { name: "OpenAI", icon: assets.openai },
       { name: "Jupyter", icon: assets.jupyter },
+      { name: "Seaborn", icon: assets.seaborn },
     ],
   },
   {
@@ -263,6 +262,7 @@ export const categorizedSkills = [
       { name: "Figma", icon: assets.figma },
       { name: "Adobe Photoshop", icon: assets.adobephotoshop },
       { name: "Canva", icon: assets.canva },
+      { name: "Davinci Resolve", icon: assets.davinci_resolve },
     ],
   },
   {
@@ -271,8 +271,9 @@ export const categorizedSkills = [
       { name: "Git", icon: assets.git },
       { name: "GitHub", icon: assets.github },
       { name: "VS Code", icon: assets.vscode },
-      { name: "Postman", icon: "📬" },
-      { name: "Jira", icon: "🎯" },
+      { name: "Postman", icon: assets.postman },
+      { name: "Jira", icon: assets.jira },
+      { name: "PyCharm", icon: assets.pycharm },
     ],
   },
   {
